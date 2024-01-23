@@ -3,32 +3,32 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: app-gitops
+  name: app-gitops
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: flaskdemo
+      app: app-gitops
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: app-gitops
     spec:
       containers:
       - image: davidgoncalvesz/images2:app-gitops-12
-        name: flaskdemo
+        name: app-gitops
         resources: {}
 status: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-service
+  name: app-gitops-service
   labels:
-    app: flask-service
+    app: app-gitops-service
 spec:
   type: NodePort
   ports:
