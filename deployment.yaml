@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app-gitops
-        image: davidgoncalvesz/images2:app-gitops-15
+        image: davidgoncalvesz/images2:app-gitops-17
         resources: {}
   strategy:
     canary:
