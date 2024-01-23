@@ -19,7 +19,7 @@ spec:
         app: app-gitops
     spec:
       containers:
-      - image: davidgoncalvesz/images2:app-gitops-13
+      - image: davidgoncalvesz/images2:app-gitops-14
         name: app-gitops
         resources: {}
 status: {}
