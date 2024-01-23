@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: app-gitops
+    argocd-image-updater.argoproj.io/enable: "true"
   name: app-gitops
 spec:
   replicas: 1
