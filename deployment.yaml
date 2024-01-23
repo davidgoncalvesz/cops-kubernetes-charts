@@ -53,6 +53,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: gitops-service
+                name: app-gitops-service
                 port:
                   number: 3000
