@@ -1,27 +1,29 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
-  creationTimestamp: null
+  name: app-gitops
   labels:
     app: app-gitops
     argocd-image-updater.argoproj.io/enable: "true"
-  name: app-gitops
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: app-gitops
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: app-gitops
     spec:
       containers:
-      - image: davidgoncalvesz/images2:app-gitops-16
-        name: app-gitops
+      - name: app-gitops
+        image: davidgoncalvesz/images2:app-gitops-15
         resources: {}
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - pause: {}
 status: {}
 ---
 apiVersion: v1
