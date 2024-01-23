@@ -41,7 +41,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: ingress-gitops
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
