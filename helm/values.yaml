@@ -8,7 +8,7 @@ rollout:
   replicas: 4
   container:
     name: app-gitops
-    image: davidgoncalvesz/app-gitops:main-6
+    image: davidgoncalvesz/app-gitops:main-5
 
 service:
   name: app-gitops-service
