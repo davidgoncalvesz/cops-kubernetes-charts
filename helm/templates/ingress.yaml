@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: app-gitops.92.co.ucll.cloud
+    - host: {{ .Values.ingress.host | default "app-gitops.92.co.ucll.cloud" }}
       http:
         paths:
           - path: /
