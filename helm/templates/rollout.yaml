@@ -22,14 +22,14 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
         resources: {}
   strategy:
     canary:
