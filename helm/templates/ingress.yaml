@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: app-gitops-service
+                name: {{ .Values.service.name }}
                 port:
                   number: 3000
