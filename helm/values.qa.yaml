@@ -14,7 +14,7 @@ service:
   name: app-gitops-service-qa
   labels:
     app: app-gitops-service-qa
-  nodePort: 30098
+  nodePort: 30078
 
   argocd:
     application:
