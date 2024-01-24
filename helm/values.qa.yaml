@@ -17,7 +17,7 @@ service:
   nodePort: 30078
 
 argocd:
-   application:
-     annotations:
-       argocd-image-updater.argoproj.io/image-list: image=davidgoncalvesz/app-gitops:qa-*
-       argocd-image-updater.argoproj.io/image.update-strategy: latest
+  application:
+    annotations:
+      argocd-image-updater.argoproj.io/image-list: image=davidgoncalvesz/app-gitops:qa-*
+      argocd-image-updater.argoproj.io/image.update-strategy: latest
