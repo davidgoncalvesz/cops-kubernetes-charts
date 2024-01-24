@@ -2,21 +2,16 @@ ingress:
   host: app-gitops-qa.92.co.ucll.cloud
 
 rollout:
-  template:
-    spec:
-      template:
-        spec:
-          containers:
-            - name: app-gitops
-              image: davidgoncalvesz/app-gitops:qa-28
+  name: app-gitops-qa
+  labels:
+    app: app-gitops-qa
+  replicas: 4
+  container:
+    name: app-gitops-qa
+    image: davidgoncalvesz/app-gitops:qa-28
 
 service:
   name: app-gitops-service-dev
   labels:
     app: app-gitops-service-dev
-  type: NodePort
-  nodePort: 30098  #adjust
-  port: 3000
-  targetPort: 3000
-  selector:
-    app: app-gitops
+  nodePort: 30098

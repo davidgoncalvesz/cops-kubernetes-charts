@@ -16,8 +16,8 @@ spec:
         app: app-gitops
     spec:
       containers:
-      - name: app-gitops
-        image: davidgoncalvesz/app-gitops:dev-28
+      - name: {{ .Values.rollout.container.name | default "app-gitops" }}
+        image: {{ .Values.rollout.container.image | default "davidgoncalvesz/app-gitops:dev-28" }}
         ports:
             - name: http
               containerPort: 80
