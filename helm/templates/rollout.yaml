@@ -26,10 +26,12 @@ spec:
           httpGet:
             path: /health
             port: 3000
+          initialDelaySeconds: 20
         readinessProbe:
           httpGet:
             path: /health
             port: 3000
+          initialDelaySeconds: 20
         resources: {}
   strategy:
     canary:
