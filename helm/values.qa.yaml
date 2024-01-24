@@ -11,7 +11,13 @@ rollout:
     image: davidgoncalvesz/app-gitops:qa-6
 
 service:
-  name: app-gitops-service-dev
+  name: app-gitops-service-qa
   labels:
-    app: app-gitops-service-dev
+    app: app-gitops-service-qa
   nodePort: 30098
+
+  argocd:
+    application:
+      annotations:
+        argocd-image-updater.argoproj.io/image-list: image=davidgoncalvesz/app-gitops:qa-*
+        argocd-image-updater.argoproj.io/image.update-strategy: latest

@@ -1,0 +1,17 @@
+ingress:
+  host: app-gitops-dev.92.co.ucll.cloud
+
+rollout:
+  name: app-gitops-dev
+  labels:
+    app: app-gitops-dev
+  replicas: 4
+  container:
+    name: app-gitops-dev
+    image: davidgoncalvesz/app-gitops:dev-0
+
+service:
+  name: app-gitops-service-dev
+  labels:
+    app: app-gitops-service-dev
+  nodePort: 30099

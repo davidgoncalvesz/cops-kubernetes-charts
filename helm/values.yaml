@@ -1,2 +1,17 @@
-env:
-  APP_VERSION: dev-latest
+ingress:
+  host: app-gitops.92.co.ucll.cloud
+
+rollout:
+  name: app-gitops
+  labels:
+    app: app-gitops
+  replicas: 4
+  container:
+    name: app-gitops
+    image: davidgoncalvesz/app-gitops:main-6
+
+service:
+  name: app-gitops-service
+  labels:
+    app: app-gitops-service
+  nodePort: 30093
