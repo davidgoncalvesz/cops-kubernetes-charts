@@ -8,7 +8,7 @@ rollout:
   replicas: 4
   container:
     name: app-gitops-qa
-    image: davidgoncalvesz/app-gitops:qa-8
+    image: davidgoncalvesz/app-gitops:qa-9
 
 service:
   name: app-gitops-service-qa
@@ -19,5 +19,5 @@ service:
 argocd:
   application:
     annotations:
-      argocd-image-updater.argoproj.io/image-list: image=davidgoncalvesz/app-gitops:qa-8
+      argocd-image-updater.argoproj.io/image-list: image=davidgoncalvesz/app-gitops:qa-9
       argocd-image-updater.argoproj.io/image.update-strategy: latest
