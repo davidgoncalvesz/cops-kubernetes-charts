@@ -11,8 +11,12 @@ rollout:
               image: davidgoncalvesz/app-gitops:qa-28
 
 service:
+  name: app-gitops-service-dev
+  labels:
+    app: app-gitops-service-dev
   type: NodePort
-  ports:
-    - nodePort: 30088
-      port: 3000
-      targetPort: 3000
+  nodePort: 30098  #adjust
+  port: 3000
+  targetPort: 3000
+  selector:
+    app: app-gitops

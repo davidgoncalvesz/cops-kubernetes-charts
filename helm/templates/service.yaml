@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-gitops-service
+  name: {{ .Values.service.name | default "app-gitops-service" }}
   labels:
-    app: app-gitops-service
+    app: {{ .Values.service.labels.app | default "app-gitops-service" }}
 spec:
-  type: NodePort
+  type: {{ .Values.service.type | default "NodePort" }}
   ports:
-  - nodePort: 30082
-    port: 3000
-    targetPort: 3000
+    - nodePort: {{ .Values.service.nodePort | default 30082 }}
+      port: {{ .Values.service.port | default 3000 }}
+      targetPort: {{ .Values.service.targetPort | default 3000 }}
   selector:
-    app: app-gitops
+    app: {{ .Values.service.selector.app | default "app-gitops" }}
