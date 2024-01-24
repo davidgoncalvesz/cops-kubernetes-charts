@@ -3,7 +3,8 @@ kind: Rollout
 metadata:
   name: app-gitops
   annotations:
-    argocd-image-updater.k8s.io/image-list: example-container
+    argocd-image-updater.k8s.io/image-list: image=davidgoncalvesz/app-gitops:dev-*
+    argocd-image-updater.argoproj.io/image.update-strategy: latest
   labels:
     app: app-gitops
     argocd-image-updater.argoproj.io/enable: "true"
