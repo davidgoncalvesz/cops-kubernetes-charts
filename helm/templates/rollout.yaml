@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: app-gitops
+  annotations:
+    argocd-image-updater.k8s.io/image-list: example-container
   labels:
     app: app-gitops
     argocd-image-updater.argoproj.io/enable: "true"
